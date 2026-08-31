@@ -1,6 +1,19 @@
 class Pessoa {
   #nome
   #email
+  #matricula
+
+    setMatricula(matricula) {
+      if(matricula >= 6) {
+        this.#matricula = matricula;
+        return true;
+      }
+      return false;
+    }
+
+    getMatricula(matricula) {
+      this.#matricula = matricula;
+    }
 
     setNome(nome) {
       if(nome != null) {
@@ -15,7 +28,7 @@ class Pessoa {
     }
 
     setEmail(email) {
-      if(email != null) {
+      if(email != null && (email.includes("@"))) {
         this.#email.trim() = email;
         return true;
       } else {
